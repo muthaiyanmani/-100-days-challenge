@@ -23,7 +23,7 @@ int atoi(string str)
 
 int main()
 {
-    string name = "-10";
+    string name = "10000";
     cout << atoi(name);
     return 0;
 }
