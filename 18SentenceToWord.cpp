@@ -8,7 +8,7 @@ void sentenceToWord(string name){
         string result="";
         if(name[i]==32 || name[i]==44){
            for(int j=initValue;j<i;j++)
-              result.push_back(name[j]);
+              result+=name[j];
            initValue=i+1;
            cout<<result<<endl;
         }

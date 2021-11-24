@@ -23,7 +23,9 @@ int atoi(string str)
 
 int main()
 {
-    string name = "10000";
+    string name;
+    cout<<"Enter number";
+    getline(cin,name);
     cout << atoi(name);
     return 0;
 }
