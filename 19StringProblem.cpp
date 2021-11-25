@@ -22,22 +22,26 @@ string rotateString(string name, int count=1,string side="right"){
     string temp = "";
     int limit = length - count;
 
-    if(side=="right"){
-         for (int i = limit; i <= length - 1; i++)
-        temp += name[i];
-    for (int i = length - 1; i >= count; i--)
-        name[i] = name[i - count];
-    for(int i=0;i<count;i++)
-        name[i]=temp[i];
+    if(side=="right"){  
+        for (int i = length - 1; i >= count; i--){
+            if(i>limit-1)
+                temp += name[i];
+            name[i] = name[i - count];
+        }
+        short int tempLength=temp.length()-1; 
+        for(int i=0;i<count;i++)
+            name[i]=temp[tempLength-i];
     return name;
 
-    }else if(side=="left"){
-        for(int i=0;i<count;i++)
-        temp+=name[i];
-    for(int i=0;i<=length-1;i++)
-        name[i]=name[i+count];
-    for(int i=limit;i<=length-1;i++)
-        name[i]=temp[i-limit];
+    }else if(side=="left"){ 
+        for(int i=0;i<=length-1;i++){
+            if(i<count)
+                temp+=name[i];
+            name[i]=name[i+count];
+        }
+            
+        for(int i=limit;i<=length-1;i++)
+            name[i]=temp[i-limit];
     return name; 
     }
 }
